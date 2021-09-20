@@ -1,130 +1,113 @@
-@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
-
-html {
-  margin: 0;
-  height: 100%;
-}
+:root {
+    --black: #414141;
+    --blue: #006FCC;
+    --light-blue: #5EB5E8;
+    --off-white: #F5F5F7;
+  }
 
 body {
-  font-family: "Patua One", cursive;
-  background-image: linear-gradient(to bottom right, #85dcbb, 90%, #fff);
-  font-size: 2em;
-  margin: auto;
-  width: 60%;
-  height: 100%;
+    background: var(--off-white);
 }
 
-h1 {
-    font-size: 1.8em;
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
 }
-
-label,
-textarea {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  margin: 0.7rem;
+p {
+    font-size: 18px;
 }
-
-.main-input {
-  padding: 10px;
-  max-width: 100%;
-  line-height: 1.5;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px #999;
-}
-
 header {
-  display: flex;
-  justify-content: center;
+    background-color: var(--blue);
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+header h1 {
+    color: var(--off-white);
+    display: inline-block;
+    padding: 6px 12px;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: ce;
-  padding: 3% 6%;
-  background-color: #e27d60;
-  border-radius: 20px;
+    max-width: 100%;
+    width: 800px;
+    margin: 100px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+article h2{
+    color: var(--black);
+    font-size: 48px;
+}
+article p{
+    line-height: 2em;
+    color: var(--black);
+}
+article p::first-line{
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-.send-button {
-    align-self: center;
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
-  height: 55px;
-  text-align: center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  /* moz-transition: all 0.4s ease-in-out; */
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+.sentimentForm {
+    text-align: center;
+    background: var(--light-blue);
+    padding: 1rem;
+}
+.sentimentForm textarea {
+    display: block;
+    margin: 2rem auto 0;
+    width: 80%;
+}
+.sentimentForm section {
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: left;
+    background: white;
+    width: 50%;
+}
+.sentimentForm section h2 {
+    color: var(--black);
+    font-size: 2rem;
+    text-align: center;
+}
+.sentimentForm section output {
+    display: block;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 2;
+}
+.greenFont {
+    color: green;
+}
+.redFont {
+    color: red;
 }
 
-.send-button:hover {
-  background-position: 100% 0;
-  /* moz-transition: all 0.4s ease-in-out; */
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+.sendButton {
+    border: 1px solid var(--off-white);
+    color: var(--off-white);
+    border-radius: none;
+    background: var(--blue);
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 20%;
+}
+.sendButton:hover {
+    transition: all 0.2s;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    background: var(--off-white);
+    cursor: pointer;
 }
 
-.send-button:focus {
-  outline: none;
+footer{
+    background: white;
+    color: var(--black);
+    padding: 10px;
+    text-align: center;
 }
-
-.send-button {
-  background-image: linear-gradient(
-    to right,
-    #6253e1,
-    #852d91,
-    #a3a1ff,
-    #f24645
-  );
-  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-}
-
-
-.bar {
-  position: relative;
-  height: 2px;
-  width: 500px;
-  margin: 0 auto;
-  background: #fff;
-  margin-top: 150px;
-}
-
-.circle {
-  position: absolute;
-  top: -30px;
-  margin-left: -30px;
-  height: 60px;
-  width: 60px;
-  left: 0;
-  background: #fff;
-  border-radius: 30%;
-  /* -webkit-animation: move 5s infinite; */
-}
-
-.loading-p {
-  position: absolute;
-  top: -35px;
-  right: -118px;
-  text-transform: uppercase;
-  color: #e27d60;
-  font-family: helvetica, sans-serif;
-  font-weight: bold;
-}
-
-/* @-webkit-keyframes move {
-  0% {left: 0;}
-  50% {left: 100%; -webkit-transform: rotate(450deg); width: 150px; height: 150px;}
-  75% {left: 100%; -webkit-transform: rotate(450deg); width: 150px; height: 150px;}
-  100 {right: 100%;}
-}  */

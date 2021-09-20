@@ -15,8 +15,8 @@ async function fetchSentiment(text) {
         body,
     });
     const data = await response.json();
-    console.log(data);
-    return data.result.type;
+
+    return data;
 
 
 }
