@@ -11,7 +11,14 @@ async function fetchSentiment(text) {
         },
         body,
     });
-    httpCatDisplay(response.status);
+
+    httpCatDisplay(response.status); // run the function to display cat HTTP error
+
+    if(!response.ok) {
+        const resultsSection = document.querySelector("[id='results']");
+        resultsSection.append('Invalid text!');
+        return false;
+    }
     const data = await response.json();
     return data;
 }
@@ -28,6 +35,8 @@ async function handleSendSentimEvent(e) {
 
     const text = e.target.previousElementSibling.value;
     const data = await fetchSentiment(text);
+
+    if(!data) return;
 
     const sentiment = data.result.type;
     loadImg.style.display = 'none';
