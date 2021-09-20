@@ -70,6 +70,23 @@ article p::first-line{
     margin: 1rem auto 0;
     width: 80%;
 }
+.sendButton {
+    border: 1px solid var(--blue);
+    color: var(--off-white);
+    border-radius: none;
+    background: var(--blue);
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 20%;
+}
+.sendButton:hover {
+    transition: all 0.2s;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    background: var(--off-white);
+    cursor: pointer;
+}
+
 .sentimentForm section {
     margin: 0 auto;
     padding: 1rem;
@@ -80,6 +97,10 @@ article p::first-line{
 .sentimentForm section h2 {
     font-size: 2rem;
     text-align: center;
+}
+.sentimentForm section img {
+    margin: 0 auto;
+    height: 80px;
 }
 .sentimentForm section output {
     display: block;
@@ -96,21 +117,9 @@ article p::first-line{
     color: grey;
 }
 
-.sendButton {
-    border: 1px solid var(--blue);
-    color: var(--off-white);
-    border-radius: none;
-    background: var(--blue);
-    padding: 1rem;
+#statusImg {
     margin: 1rem 0;
-    width: 20%;
-}
-.sendButton:hover {
-    transition: all 0.2s;
-    color: var(--blue);
-    border: 1px solid var(--blue);
-    background: var(--off-white);
-    cursor: pointer;
+    max-width: 50%;
 }
 
 footer{

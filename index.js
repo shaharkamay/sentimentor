@@ -1,8 +1,5 @@
 "use strict";
 
-const TEXT_AREA_INPUT = "";
-let displayResultDiv;
-
 async function fetchSentiment(text) {
     const url = "https://sentim-api.herokuapp.com/api/v1/";
     const body = JSON.stringify({text});
@@ -14,8 +11,8 @@ async function fetchSentiment(text) {
         },
         body,
     });
+    httpCatDisplay(response.status);
     const data = await response.json();
-    console.log(data);
     return data;
 }
 
@@ -26,15 +23,24 @@ async function fetchSentiment(text) {
 })();
 
 async function handleSendSentimEvent(e) {
+    const loadImg = document.querySelector(".loading");
+    loadImg.style.display = 'block';
+
     const text = e.target.previousElementSibling.value;
     const data = await fetchSentiment(text);
 
     const sentiment = data.result.type;
-
+    loadImg.style.display = 'none';
     const resultsSection = document.querySelector("[id='results']");
     resultsSection.classList = sentiment; // the class name is similar to the sentiment type
 
-    const [, sentimentType, polarity] = resultsSection.children;
+    const [, , sentimentType, polarity] = resultsSection.children;
     sentimentType.textContent = `Sentiment: ${sentiment}`;
     polarity.textContent = `Polarity: ${data.result.polarity}`;
+}
+
+function httpCatDisplay(status) {
+    const img = document.querySelector("[id='statusImg']");
+    img.src = `https://http.cat/${status}`;
+    img.hidden = false;
 }
