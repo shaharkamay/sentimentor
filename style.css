@@ -1,0 +1,131 @@
+:root {
+    --black: #414141;
+    --blue: #006FCC;
+    --light-blue: #5EB5E8;
+    --off-white: #F5F5F7;
+  }
+
+body {
+    background: var(--off-white);
+}
+
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+}
+p {
+    font-size: 18px;
+}
+header {
+    background-color: var(--blue);
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0px 5px 8px rgba(0,0,0,0.2);
+}
+header h1 {
+    color: var(--off-white);
+    display: inline-block;
+    padding: 6px 12px;
+}
+
+main {
+    max-width: 100%;
+    width: 800px;
+    margin: 100px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+article h2{
+    color: var(--black);
+    font-size: 48px;
+}
+article p{
+    line-height: 2em;
+    color: var(--black);
+}
+article p::first-line{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.sentimentForm {
+    text-align: center;
+    background: var(--light-blue);
+    padding: 1rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+.sentimentForm h3 {
+    color: var(--black);
+    font-size: 1.2rem;
+    text-align: center;
+}
+.sentimentForm textarea {
+    display: block;
+    margin: 1rem auto 0;
+    width: 80%;
+}
+.sendButton {
+    border: 1px solid var(--blue);
+    color: var(--off-white);
+    border-radius: none;
+    background: var(--blue);
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 20%;
+}
+.sendButton:hover {
+    transition: all 0.2s;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    background: var(--off-white);
+    cursor: pointer;
+}
+
+.sentimentForm section {
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: left;
+    background: white;
+    width: 50%;
+}
+.sentimentForm section h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+.sentimentForm section img {
+    margin: 0 auto;
+    height: 80px;
+}
+.sentimentForm section output {
+    display: block;
+    font-weight: 600;
+    line-height: 2;
+}
+.positive {
+    color: green;
+}
+.negative {
+    color: red;
+}
+.neutral {
+    color: grey;
+}
+
+#statusImg {
+    margin: 1rem 0;
+    max-width: 50%;
+}
+
+footer{
+    background: white;
+    color: var(--black);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px -5px 20px rgba(0,0,0,0.1);
+}
